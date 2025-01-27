@@ -73,7 +73,7 @@ fi
 # Get system information
 WORKDIR=$(pwd)
 PYTORCH_VERSION=$(python -c "import torch; print(torch.__version__)")
-PLATFORM=$(python -c "import torch; print(('cuda' if torch.version.cuda else ('hip' if torch.version.hip else 'unknown')) if torch.cuda.is_available() else 'cpu')")
+PLATFORM=$(python -c "import torch; print(('cuda' if torch.version.cuda else ('hip' if torch.version.hip else 'unknown')))")
 case $PLATFORM in
     cuda)
         CUDA_VERSION=$(python -c "import torch; print(torch.version.cuda)")
